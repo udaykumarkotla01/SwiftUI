@@ -7,4 +7,4 @@
 
 import Foundation
 
-let API_KEY = "Key id"
+let API_KEY = "Key-id"
