@@ -37,10 +37,8 @@ struct Current: Codable {
     let precipMm, precipIn, humidity, cloud: Int
     let feelslikeC, feelslikeF, windchillC, windchillF: Double
     let heatindexC, heatindexF, dewpointC, dewpointF: Double
-    let visKM, visMiles: Int
-    let uv, gustMph, gustKph, shortRAD: Double
-    let diffRAD, dni: Double
-    let gti: Int
+    let visMiles: Int
+    let uv: Double
 
     enum CodingKeys: String, CodingKey {
         case lastUpdatedEpoch = "last_updated_epoch"
@@ -66,16 +64,12 @@ struct Current: Codable {
         case heatindexF = "heatindex_f"
         case dewpointC = "dewpoint_c"
         case dewpointF = "dewpoint_f"
-        case visKM = "vis_km"
         case visMiles = "vis_miles"
         case uv
-        case gustMph = "gust_mph"
-        case gustKph = "gust_kph"
-        case shortRAD = "short_rad"
-        case diffRAD = "diff_rad"
-        case dni, gti
     }
 }
+
+
 
 // MARK: - Condition
 struct Condition: Codable {
@@ -98,3 +92,60 @@ struct Location: Codable {
         case localtime
     }
 }
+
+
+/**
+ // Example response:
+ {
+     "location": {
+         "name": "London",
+         "region": "City of London, Greater London",
+         "country": "United Kingdom",
+         "lat": 51.5171,
+         "lon": -0.1062,
+         "tz_id": "Europe/London",
+         "localtime_epoch": 1765381103,
+         "localtime": "2025-12-10 15:38"
+     },
+     "current": {
+         "last_updated_epoch": 1765380600,
+         "last_updated": "2025-12-10 15:30",
+         "temp_c": 12.2,
+         "temp_f": 54.0,
+         "is_day": 1,
+         "condition": {
+             "text": "Sunny",
+             "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+             "code": 1000
+         },
+         "wind_mph": 11.4,
+         "wind_kph": 18.4,
+         "wind_degree": 249,
+         "wind_dir": "WSW",
+         "pressure_mb": 1017.0,
+         "pressure_in": 30.03,
+         "precip_mm": 0.0,
+         "precip_in": 0.0,
+         "humidity": 67,
+         "cloud": 25,
+         "feelslike_c": 10.3,
+         "feelslike_f": 50.5,
+         "windchill_c": 9.2,
+         "windchill_f": 48.5,
+         "heatindex_c": 11.3,
+         "heatindex_f": 52.3,
+         "dewpoint_c": 6.5,
+         "dewpoint_f": 43.7,
+         "vis_km": 10.0,
+         "vis_miles": 6.0,
+         "uv": 0.1,
+         "gust_mph": 16.3,
+         "gust_kph": 26.3,
+         "short_rad": 160.58,
+         "diff_rad": 50.58,
+         "dni": 1252.34,
+         "gti": 0.0
+     }
+ }
+ 
+ */
