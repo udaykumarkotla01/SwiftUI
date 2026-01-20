@@ -18,7 +18,11 @@ struct WeatherView: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button{
                         Task{
-                            await vm.fetchWeatherData(city: vm.city)
+                            do{
+                                vm.weather =  try await vm.fetchWeatherData(city: vm.city)
+                            } catch{
+                                vm.errorMsg = error.localizedDescription
+                            }
                         }
                     }label:
                     {

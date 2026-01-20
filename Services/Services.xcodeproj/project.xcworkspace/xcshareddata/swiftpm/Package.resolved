@@ -1,0 +1,15 @@
+{
+  "originHash" : "7ab358815ce6d509723f9fda35f93e7b9f239b09f327ef08f46489edcfb6dc90",
+  "pins" : [
+    {
+      "identity" : "servicessampledata",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sabari-zuper/ServicesSampleData.git",
+      "state" : {
+        "revision" : "eca717afa3985c1fe7af820e5806b821d5c27811",
+        "version" : "1.0.2"
+      }
+    }
+  ],
+  "version" : 3
+}
