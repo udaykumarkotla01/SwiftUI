@@ -1,7 +1,6 @@
 import UIKit
 import Combine
 
-
 /**
  
  [
@@ -72,7 +71,77 @@ case .failure(let error): print("Failed 2 \(error)")
 .store(in: &canellables)
 
 
-// error handling
 
+// Movies Api example
+
+/**
+ 
+  http://www.omdbapi.com/?i=tt3896198&apikey=18ba4c3d
+  
+  {
+ "Search": [
+   {
+     "Title": "Bahubali",
+     "Year": "2008–2009",
+     "imdbID": "tt4549714",
+     "Type": "series",
+     "Poster": "https://m.media-amazon.com/images/M/MV5BMGNjMjRjY2QtOTNiNi00ZmE0LTkwNjYtYTVhNDE2Yzk0OTZhXkEyXkFqcGc@._V1_SX300.jpg"
+   },
+   {
+     "Title": "Hum Bahubali",
+     "Year": "2008",
+     "imdbID": "tt5216536",
+     "Type": "movie",
+     "Poster": "N/A"
+   },
+   {
+     "Title": "Gommateshwara Lord Bahubali",
+     "Year": "2018",
+     "imdbID": "tt8093880",
+     "Type": "movie",
+     "Poster": "https://m.media-amazon.com/images/M/MV5BODVlOWViZTctZjJmNC00YmUyLTg0ODItYzgxNWRmM2NjNGM4XkEyXkFqcGdeQXVyMjY1NzA0Nzc@._V1_SX300.jpg"
+   },
+   {
+     "Title": "Bhojpuri Ke Sabse Bade Bhaiya Bahubali Bhaiya Ji",
+     "Year": "2019",
+     "imdbID": "tt33111896",
+     "Type": "movie",
+     "Poster": "N/A"
+   },
+ ]
+ */
+struct MovieResponse : Codable {
+    let search: [Movie]
+    private enum CodingKeys : String , CodingKey{
+        case search = "Search"
+    }
+}
+
+struct Movie : Codable{
+    let title : String
+    private enum CodingKeys : String , CodingKey{
+        case title = "Title"
+    }
+}
+
+func fetchMovie(_ movieName : String) -> AnyPublisher<MovieResponse , Error>{
+    URLSession.shared.dataTaskPublisher(for: URL(string:"https://www.omdbapi.com/?s=\(movieName)&apikey=18ba4c3d")!)
+        .map(\.data)
+        .decode(type: MovieResponse.self, decoder: JSONDecoder())
+        .receive(on: DispatchQueue.main)
+        .eraseToAnyPublisher()
+}
+
+let spiderManMovies = fetchMovie("spiderman")
+spiderManMovies
+    .flatMap { $0.search.publisher }
+    .sink { completion in
+        switch completion{
+        case .finished : print("movie fetch completed")
+        case .failure( let error) : print("movies error")
+        }
+    } receiveValue: { val in
+        print("Movie name: \(val.title)")
+    }.store(in: &canellables)
 
 
