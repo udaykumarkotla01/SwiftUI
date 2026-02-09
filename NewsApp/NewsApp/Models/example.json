@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "found": 1651512,
+    "returned": 3,
+    "limit": 3,
+    "page": 1
+  },
+  "data": [
+    {
+      "uuid": "16a7cbcc-6480-4c95-a1fb-557037778382",
+      "title": "Trump has a plan to steal the midterms. It will probably fail.",
+      "description": "The threat of Donald Trump trying to rig the 2026 midterm elections has never been higher. After the FBI’s raid of an election office in Fulton County — mys...",
+      "keywords": "",
+      "snippet": "is a senior correspondent at Vox. He covers a wide range of political and policy issues with a special focus on questions that internally divide the American le...",
+      "url": "https://www.vox.com/politics/478263/trump-midterms-2026-rigged-election-fulton-county-gabbard-bondi",
+      "image_url": "https://platform.vox.com/wp-content/uploads/sites/2/2026/02/gettyimages-2257975335.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "language": "en",
+      "published_at": "2026-02-09T11:09:25.000000Z",
+      "source": "vox.com",
+      "categories": [
+        "general",
+        "politics",
+        "entertainment"
+      ],
+      "relevance_score": null,
+      "locale": "us"
+    },
+    {
+      "uuid": "7783c728-87b5-435b-9d18-c1bd9f66c8e4",
+      "title": "The 2-pronged GOP plot to make it harder to get an abortion",
+      "description": "Anti-abortion officials want to shutter Planned Parenthood — and make it harder to get abortion medication.",
+      "keywords": "",
+      "snippet": "Anti-abortion conservatives have long sought to force Planned Parenthood’s clinics to close their doors and to make it harder, if not impossible, to get abort...",
+      "url": "https://www.salon.com/2026/02/09/the-new-2-pronged-gop-approach-to-make-it-harder-to-get-an-abortion-partner/",
+      "image_url": "https://www.salon.com/app/uploads/2024/02/planned_parenthood_1241517147.jpg",
+      "language": "en",
+      "published_at": "2026-02-09T11:00:54.000000Z",
+      "source": "salon.com",
+      "categories": [
+        "general"
+      ],
+      "relevance_score": null,
+      "locale": "us"
+    },
+    {
+      "uuid": "bc3d6c29-1ead-4cf4-8e9b-6a060431fa65",
+      "title": "I Offered to Babysit My Sister-in-Law’s Kids. Then I Saw What She’s Really Up To.",
+      "description": "She's taking advantage of me.",
+      "keywords": "slate-plus, advice, family, parenting, kids",
+      "snippet": "Care and Feeding is Slate’s parenting advice column. Have a question for Care and Feeding? Submit it here.\n\nDear Care and Feeding,\n\nMy sister-in-law “Jane?...",
+      "url": "https://slate.com/advice/2026/02/family-advice-child-care-late-favor.html?via=rss",
+      "image_url": "https://compote.slate.com/images/5b5c10f1-93ea-4ee2-ae6e-0406e8a2f622.jpeg?crop=1560%2C1040%2Cx0%2Cy0&width=1560",
+      "language": "en",
+      "published_at": "2026-02-09T11:00:00.000000Z",
+      "source": "slate.com",
+      "categories": [
+        "general"
+      ],
+      "relevance_score": null,
+      "locale": "us"
+    }
+  ]
+}
