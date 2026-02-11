@@ -22,8 +22,8 @@ struct Datum: Codable ,Identifiable{
     var id : String { uuid }
     let uuid, title, description: String
     let url: String
-    let imageURL: String
-    let publishedAt: String
+    let imageURL: String?
+    let publishedAt: String?
    
 
     enum CodingKeys: String, CodingKey {

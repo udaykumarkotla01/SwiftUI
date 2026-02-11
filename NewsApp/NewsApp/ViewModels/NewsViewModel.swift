@@ -10,11 +10,11 @@ import Foundation
 @MainActor
 @Observable
 public class NewsViewModel{
-    var article : Article = Article(data: data)
+    var newsModel : Article = Article(data: data)
     var isLoading : Bool = false
     var errorMsg : String? = nil
     
-    private let API_KEY = "UlXVx4tVyJIFeUbGjgNUnnzh3wWmKpOwTHyApwA1"
+    private let API_KEY = APIKEY
     
     func fetch_Headlines() async{
         isLoading = true
@@ -28,7 +28,7 @@ public class NewsViewModel{
         }
         do{
             let(data, _) = try await URLSession.shared.data(from: url)
-            article = try JSONDecoder().decode(Article.self, from: data)
+            newsModel = try JSONDecoder().decode(Article.self, from: data)
         }catch{
             errorMsg = "Server broken...Try after sometime."
         }
