@@ -16,6 +16,14 @@ public class NewsViewModel{
     
     private let API_KEY = APIKEY
     
+    init(){
+        Task{
+            if newsModel.data.isEmpty {
+                await fetch_Headlines()
+            }
+        }
+    }
+    
     func fetch_Headlines() async{
         isLoading = true
         errorMsg = nil
@@ -30,6 +38,7 @@ public class NewsViewModel{
             let(data, _) = try await URLSession.shared.data(from: url)
             newsModel = try JSONDecoder().decode(Article.self, from: data)
         }catch{
+            print("error: \(error)")
             errorMsg = "Server broken...Try after sometime."
         }
         isLoading = false

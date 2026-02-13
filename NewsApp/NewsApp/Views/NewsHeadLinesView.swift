@@ -13,9 +13,9 @@ struct NewsHeadLinesView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-//                LinearGradient(colors: [.blue.opacity(0.5),.white.opacity(0.5),], startPoint: .topLeading, endPoint: .bottomTrailing)
-//                    .blur(radius: 40)
-//                    .ignoresSafeArea(
+                //                LinearGradient(colors: [.blue.opacity(0.5),.white.opacity(0.5),], startPoint: .topLeading, endPoint: .bottomTrailing)
+                //                    .blur(radius: 40)
+                //                    .ignoresSafeArea(
                 
                 if(vm.isLoading){
                     ProgressView("Loading..")
@@ -46,16 +46,11 @@ struct NewsHeadLinesView: View {
                 Text(vm.errorMsg ?? "")
             })
             .navigationTitle("Top Headlines")
-                .task {
-                    await vm.fetch_Headlines()
-                }
-                .refreshable {
-                    await vm.fetch_Headlines()
-                }
+            .refreshable {
+                try? await Task.sleep(for: .seconds(2))
+                await vm.fetch_Headlines()
+            }
         }
     }
 }
 
-#Preview {
-    NewsHeadLinesView()
-}
