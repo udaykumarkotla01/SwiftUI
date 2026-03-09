@@ -14,4 +14,3 @@ textPublisher.send("A")
 textPublisher.send("A3")
 textPublisher.send("A4")
 textPublisher.send("A7")
-
